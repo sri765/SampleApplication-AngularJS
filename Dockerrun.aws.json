@@ -3,7 +3,7 @@
   "containerDefinitions": [
      {
        "name": "angular",
-       "image": "212099763728.dkr.ecr.eu-west-1.amazonaws.com/angularapp:latest",
+       "image": "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/{IMAGE_NAME}:{IMAGE_TAG}",
      }
    ]
 }
