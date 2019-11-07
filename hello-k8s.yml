@@ -31,10 +31,6 @@ spec:
     spec:
       containers:
         - name: hello-k8s
-          image: CONTAINER_IMAGE
-          securityContext:
-            privileged: false
-            readOnlyRootFilesystem: true
-            allowPrivilegeEscalation: false
+          image: 212099763728.dkr.ecr.us-east-1.amazonaws.com/angularapp
           ports:
             - containerPort: 8080
