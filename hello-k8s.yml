@@ -6,7 +6,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 80
   selector:
     app: hello-k8s
 ---
@@ -33,4 +33,4 @@ spec:
         - name: hello-k8s
           image: $AWS_ACC_NO.dkr.ecr.us-east-1.amazonaws.com/angularapp
           ports:
-            - containerPort: 8080
+            - containerPort: 80
