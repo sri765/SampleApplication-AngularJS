@@ -31,9 +31,9 @@ phases:
       - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
       - aws eks update-kubeconfig --name $EKS_CLUSTER_NAME
-      - kubectl apply -f aws-auth.yaml
+#       - kubectl apply -f aws-auth.yaml
       - kubectl apply -f hello-k8s.yml
-      - kubectl get svc | grep elb
+#       - kubectl get svc | grep elb
       # - printf '[{"name":"hello-k8s","imageUri":"%s"}]' $REPOSITORY_URI:$TAG > build.json
 artifacts:
   files: build.json
