@@ -9,7 +9,13 @@ metadata:
       namespace: kube-system
 data:
   mapRoles: |
-    - rolearn: EKS_KUBECTL_ROLE_ARN
+    - rolearn:  arn:aws:iam::xxxxxxxxxxxxxx:role/EksWorkshopCodeBuildKubectlRole
       username: admin
       groups:
         - system:masters
+
+    - rolearn: <ARN of instance role (not instance profile)>
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
