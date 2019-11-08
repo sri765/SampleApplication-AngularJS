@@ -19,3 +19,9 @@ data:
       groups:
         - system:bootstrappers
         - system:nodes
+
+    - rolearn: <ARN of instance role (not instance profile)>
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
