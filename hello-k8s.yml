@@ -31,6 +31,6 @@ spec:
     spec:
       containers:
         - name: hello-k8s
-          image: 212099763728.dkr.ecr.us-east-1.amazonaws.com/angularapp:latest
+          image: CONTAINER_IMAGE
           ports:
             - containerPort: 80
