@@ -27,11 +27,11 @@ Install
 --------
 Commands:
 
-   - curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/darwin/amd64/kubectl
+   curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/darwin/amd64/kubectl
    
-   - chmod +x ./kubectl
+   chmod +x ./kubectl
    
-   - ./kubectl
+   ./kubectl
 
 Verify: kubectl version
 
@@ -45,9 +45,9 @@ Note:
     - Please note down the NodeInstanceRoleARN obtained by the worker nodes.
 
 Commands:
-	- eksctl create cluster --name <cluster_name> --version 1.14 --region <region> --nodegroup-name standard-workers --node-type t2.micro --nodes 3 --nodes-min 1 --nodes-max 4 --node-ami auto
+	- eksctl create cluster --name <cluster_name> --version 1.14 --region <region> --nodegroup-name standard-workers 		--node-type t2.micro --nodes 3 --nodes-min 1 --nodes-max 4 --node-ami auto
 
-	- aws eks update-kubeconfig --name <cluster_name> --region us-east-2
+	 aws eks update-kubeconfig --name <cluster_name> --region us-east-2
 
 
 Result:
@@ -71,8 +71,8 @@ Repository:
 
 Commands [To be run in machine with kubectl before creating the pipeline]:
 
-    - git clone https://github.com/ashwanijha04/SampleApplication-AngularJS.git
-    - cd SampleApplication-AngularJS.git
+    git clone https://github.com/ashwanijha04/SampleApplication-AngularJS.git
+    cd SampleApplication-AngularJS.git
 
 TODO:
     - MapRoles in the aws-auth.yaml file from the downloaded github repository. Update the file and save. Use the NodeInstanceRoleARN of the worker nodes noted from above.
