@@ -10,7 +10,7 @@ phases:
 #       - chmod +x ./kubectl ./aws-iam-authenticator
 #       - export PATH=$PWD/:$PATH
 #       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
-      - echo trying again
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
       
   pre_build:
       commands:
