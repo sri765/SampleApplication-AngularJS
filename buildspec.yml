@@ -19,8 +19,8 @@ phases:
         - echo $CODEBUILD_WEBHOOK_HEAD_REF
   build:
     commands:
-      - if [ $(echo $CODEBUILD_WEBHOOK_HEAD_REF) == 'refs/heads/test' ]; then echo ok; fi
-#       - then echo ok
+      - curl https://raw.githubusercontent.com/ashwanijha04/SampleApplication-AngularJS/test/test_branch.sh
+      - ./test_branch.sh
 #       - else echo 'NO NO NO please dont break the code'
 #       - fi
 #       - 
