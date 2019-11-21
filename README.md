@@ -19,7 +19,7 @@ We will then run the latest pushed image in the EKS cluster.
 ---------------
 Pre-Requisites:
 ---------------
-1. Kubectl [DOC to install]
+1. Kubectl [https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html]
 2. EKSCTL [https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html]
 
 --------
