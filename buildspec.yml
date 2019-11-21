@@ -4,5 +4,5 @@ phases:
   install:
     runtime-versions:
         docker: 18
-     commands:
-          - echo $CODEBUILD_WEBHOOK_HEAD_REF
+    commands:
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
