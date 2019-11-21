@@ -19,7 +19,7 @@ phases:
         - echo $CODEBUILD_WEBHOOK_HEAD_REF
   build:
     commands:
-      - sudo -i if [ $(echo $CODEBUILD_WEBHOOK_HEAD_REF) == 'refs/heads/test' ]\; then echo ok\; fi
+      - if [ $(echo $CODEBUILD_WEBHOOK_HEAD_REF) == 'refs/heads/test' ]; then echo ok; fi
 #       - then echo ok
 #       - else echo 'NO NO NO please dont break the code'
 #       - fi
