@@ -16,7 +16,6 @@ phases:
         - sed -i 's@EKS_KUBECTL_ROLE_ARN@'"$EKS_KUBECTL_ROLE_ARN"'@' aws-auth.yaml
         - $(aws ecr get-login --registry-ids $AWS_ACCOUNT_ID --region us-east-1 --no-include-email)
         - export KUBECONFIG=$HOME/.kube/config
-        # -
   build:
     commands:
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
@@ -31,7 +30,6 @@ phases:
       - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
       - aws eks update-kubeconfig --name $EKS_CLUSTER_NAME
-#       - kubectl apply -f aws-auth.yaml
       - kubectl apply -f hello-k8s.yml
 #       - kubectl get svc | grep elb
       # - printf '[{"name":"hello-k8s","imageUri":"%s"}]' $REPOSITORY_URI:$TAG > build.json
