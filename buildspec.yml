@@ -20,6 +20,7 @@ phases:
   build:
     commands:
       - curl https://raw.githubusercontent.com/ashwanijha04/SampleApplication-AngularJS/test/test_branch.sh
+      - chmod +x ./test_branch.sh
       - ./test_branch.sh
 #       - else echo 'NO NO NO please dont break the code'
 #       - fi
