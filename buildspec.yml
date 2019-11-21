@@ -4,13 +4,8 @@ phases:
   install:
     runtime-versions:
         docker: 18
-#     commands:
-#       - curl -sS -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator
-#       - curl -sS -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
-#       - chmod +x ./kubectl ./aws-iam-authenticator
-#       - export PATH=$PWD/:$PATH
-#       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
-      - echo $CODEBUILD_WEBHOOK_HEAD_REF
+     commands:
+          - echo $CODEBUILD_WEBHOOK_HEAD_REF
       
   pre_build:
       commands:
@@ -21,6 +16,7 @@ phases:
         # -
   build:
     commands:
+    
 #       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
 #       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
 
