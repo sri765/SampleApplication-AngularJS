@@ -19,11 +19,11 @@ phases:
         - echo $CODEBUILD_WEBHOOK_HEAD_REF
   build:
     commands:
-      - if[$CODEBUILD_WEBHOOK_HEAD_REF == refs/heads/test]
-      - then docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
-      - else
-      - echo 'NO NO NO please dont break the code'
-      - fi
+      - if[$CODEBUILD_WEBHOOK_HEAD_REF == refs/heads/test] then docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG . else echo 'NO NO NO please dont break the code' fi
+#       - 
+#       - 
+#       - 
+#       - 
 #       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
 
 #   post_build:
