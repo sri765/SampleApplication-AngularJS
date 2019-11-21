@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Deployment
 Containers, Kubernetes, ECS, EKS
 
-## How to Deploy this Application to Amazok EKS?
+## How to Deploy a sample Application to Amazok EKS and configure CI/CD with it?
 
 ---------------
 CI/CD with EKS
