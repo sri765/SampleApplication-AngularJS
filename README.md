@@ -109,7 +109,7 @@ Steps
  				- IMAGE_TAG
  				- EKS_CLUSTER_NAME
 
- 			[You can either use ECR images or change the 'CONTAINER_NAME' to 'nginx' if you do not wish to use ECR]
+ 			[You can either use ECR images or change the 'CONTAINER_NAME' (in hello-k8s.yaml) to 'nginx' if you do not wish to use ECR]
 
 
  		Note: 
