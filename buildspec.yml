@@ -19,8 +19,8 @@ phases:
         - echo $CODEBUILD_WEBHOOK_HEAD_REF
   build:
     commands:
-      - if [ $(echo $CODEBUILD_WEBHOOK_HEAD_REF) == 'refs/heads/test' ]
-      - then echo ok
+      - if [ $(echo $CODEBUILD_WEBHOOK_HEAD_REF) == 'refs/heads/test' ] then echo ok
+#       - then echo ok
       - else echo 'NO NO NO please dont break the code'
       - fi
 #       - 
