@@ -16,14 +16,15 @@ phases:
 #         - sed -i 's@EKS_KUBECTL_ROLE_ARN@'"$EKS_KUBECTL_ROLE_ARN"'@' aws-auth.yaml
 #         - $(aws ecr get-login --registry-ids $AWS_ACCOUNT_ID --region us-east-1 --no-include-email)
 #         - export KUBECONFIG=$HOME/.kube/config
-        - export BRANCH=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | rev | cut -d '/' -f 1 | awk '{printf $1}' | rev)
-        - echo $BRANCH
+#         - export BRANCH=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | rev | cut -d '/' -f 1 | awk '{printf $1}' | rev)
+#         - echo $BRANCH
         
   build:
     commands:
-#       - curl https://raw.githubusercontent.com/ashwanijha04/SampleApplication-AngularJS/test/test_branch.sh
-#       - chmod +x ./test_branch.sh
-#       - ./test_branch.sh
+      - curl https://raw.githubusercontent.com/ashwanijha04/SampleApplication-AngularJS/test/test_branch.sh
+      - chmod +x ./test_branch.sh
+      - ./test_branch.sh
+      - echo $BRANCH
 #       - else echo 'NO NO NO please dont break the code'
 #       - fi
 #       - 
