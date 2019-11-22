@@ -164,8 +164,9 @@ Setting things up
 
  1. Clone the following sample repository: [https://github.com/ashwanijha04/SampleApplication-AngularJS] and cd into the directory.
 ---------
-git clone https://github.com/ashwanijha04/SampleApplication-AngularJS
-cd SampleApplication-AngularJS/
+	git clone https://github.com/ashwanijha04/SampleApplication-AngularJS
+	cd SampleApplication-AngularJS/
+	
 ---------
 
  2. Install kubectl in your local machine/EC2 instance: We will use kubectl to talk to the master node.
@@ -174,23 +175,27 @@ cd SampleApplication-AngularJS/
    chmod +x ./kubectl
    ./kubectl
 Verify: kubectl version
+
 --------
 
 3. Update the kubeconfig file with the correct cluster name.
 --------
-aws eks update-kubeconfig --name $EKS_CLUSTER_NAME
+	aws eks update-kubeconfig --name $EKS_CLUSTER_NAME
+	
 --------
 
 
 4. Creating the role 'EKS_KUBECTL_ROLE'.
 ------
-    - Create a role and give it the required permissions you need. You can select AdministratorAccess for test.
-    - Note its ARN.
+Create a role and give it the required permissions you need. You can select AdministratorAccess for test.
+Note its ARN.
+
 ------
 
 5. Edit the file aws-auth.yaml to add the required roles(add EKS_KUBECTL_ROLE_ARN and NodeInstanceRoleARNs for the worker nodes as noted above) and apply it in your local machine. In your local machine where kubectl was installed and update-kubeconfig was run, we need to run the following command:
 -------
-kubectl apply -f aws-auth.yaml
+	kubectl apply -f aws-auth.yaml
+	
 ------
 
 6. Now, we are done with the EKS part.
