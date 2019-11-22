@@ -171,9 +171,10 @@ Setting things up
 
  2. Install kubectl in your local machine/EC2 instance: We will use kubectl to talk to the master node.
 --------
-   curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/darwin/amd64/kubectl
-   chmod +x ./kubectl
-   ./kubectl
+   	curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/darwin/amd64/kubectl
+   	chmod +x ./kubectl
+   	./kubectl
+	
 Verify: kubectl version
 
 --------
