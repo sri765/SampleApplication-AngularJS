@@ -1,7 +1,7 @@
 export BRANCH=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | rev | cut -d '/' -f 1 | awk '{printf $1}' | rev)
 echo $BRANCH
 
-if [ $(echo $BRANCH) == 'master' ]
+if [$(echo $BRANCH)=='master' ]
 then
   echo 'Cool! In code, we trust!'
 # Publish notification directly from the CLI. Use Branch name in the message.
