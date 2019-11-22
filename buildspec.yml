@@ -12,11 +12,11 @@ phases:
 #       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
   pre_build:
       commands:
-        - sed -i 's@CONTAINER_IMAGE@'"$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"'@' hello-k8s.yml
-        - sed -i 's@EKS_KUBECTL_ROLE_ARN@'"$EKS_KUBECTL_ROLE_ARN"'@' aws-auth.yaml
-        - $(aws ecr get-login --registry-ids $AWS_ACCOUNT_ID --region us-east-1 --no-include-email)
-        - export KUBECONFIG=$HOME/.kube/config
-        - echo $CODEBUILD_WEBHOOK_HEAD_REF
+#         - sed -i 's@CONTAINER_IMAGE@'"$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"'@' hello-k8s.yml
+#         - sed -i 's@EKS_KUBECTL_ROLE_ARN@'"$EKS_KUBECTL_ROLE_ARN"'@' aws-auth.yaml
+#         - $(aws ecr get-login --registry-ids $AWS_ACCOUNT_ID --region us-east-1 --no-include-email)
+#         - export KUBECONFIG=$HOME/.kube/config
+        - echo $CODEBUILD_WEBHOOK_HEAD_REF | sed -n 2p | awk '{printf $1}' | rev | cut -d '/' -f 1 | rev
   build:
     commands:
       - curl https://raw.githubusercontent.com/ashwanijha04/SampleApplication-AngularJS/test/test_branch.sh
