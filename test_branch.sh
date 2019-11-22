@@ -1,5 +1,3 @@
-#!/bin/bash
-
 export BRANCH=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | rev | cut -d '/' -f 1 | awk '{printf $1}' | rev)
 echo $BRANCH
 
@@ -11,5 +9,5 @@ then
   aws sns publish --topic-arn "arn:aws:sns:us-west-2:0123456789012:my-topic" --message <string>
 
 else
-  echo 'Sorry, this code doesn't have what it takes. Fail Build.'
+  echo "Sorry, this code doesnt have what it takes. Fail Build."
 fi
