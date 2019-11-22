@@ -5,6 +5,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Deployment
 Containers, Kubernetes, ECS, EKS
 
+## How does Kubernetes works?
+
+In a nutshell, there are three components to Kubernetes - A master node, worker nodes and a client that talks to the master node(M) using kubectl which uses a kubelet process and schedules tasks on the worker nodes(W).
+
+local machine [kubectl]  -----(Makes api request to master)--------->  [M] ----------> (Schedules the containers in a unit called pods in the worker nodes)
+
+        W3_____[ M ]_____W1
+                 |
+                 W2
+
 ## How to Deploy a sample Application to Amazok EKS and configure CI/CD with it?
 
 This section contains steps to create cluster in two ways:
