@@ -3,11 +3,11 @@ echo $BRANCH
 
 if [ $BRANCH == 'master' ]
 then
-  echo 'Cool! In code, we trust!''
+  echo 'Cool! In code, we trust!'
 
 # Publish notification directly from the CLI. Use Branch name in the message.
   aws sns publish --topic-arn "arn:aws:sns:us-west-2:0123456789012:my-topic" --message <string>
 
 else
-  echo "Sorry, this code doesnt have what it takes. Fail Build."
+  echo 'Sorry, this code doesn\'t have what it takes. Fail Build.'
 fi
