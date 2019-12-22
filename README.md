@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
 
+## Quick Deploy to your cluster:
+    kubectl apply -f https://raw.githubusercontent.com/ashwanijha04/SampleApplication-AngularJS/master/service_deployment.yaml
+
 # Deployment
 Containers, Kubernetes, ECS, EKS
 
