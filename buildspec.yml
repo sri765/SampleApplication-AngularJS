@@ -14,7 +14,7 @@ phases:
       commands:
         - sed -i 's@CONTAINER_IMAGE@'"$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"'@' hello-k8s.yml
         - sed -i 's@EKS_KUBECTL_ROLE_ARN@'"$EKS_KUBECTL_ROLE_ARN"'@' aws-auth.yaml
-        - $(aws ecr get-login --registry-ids $AWS_ACCOUNT_ID --region us-east-1 --no-include-email)
+        - $(aws ecr get-login --registry-ids $AWS_ACCOUNT_ID --region us-east-2 --no-include-email)
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
