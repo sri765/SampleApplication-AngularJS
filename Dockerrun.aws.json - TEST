@@ -1,9 +1,0 @@
-{
-  "AWSEBDockerrunVersion": 1,
-  "containerDefinitions": [
-     {
-       "name": "angular",
-       "image": "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/${IMAGE_NAME}:{IMAGE_VERSION}"
-     }
-   ]
-}
